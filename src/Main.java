@@ -1,17 +1,28 @@
+import LearnAndBasics.LEC1.BasicsClass;
+import LearnAndBasics.LEC1.TrieOperations;
+import org.w3c.dom.Node;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        BasicsClass basicsClass = new BasicsClass();
+        TrieOperations trieOperations = new TrieOperations();
+//        trieOperations.insertWords("apple");
+//        trieOperations.insertWords("apps");
+//        System.out.println(trieOperations.search("apple"));
+//        System.out.println(trieOperations.startWith("apps"));
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+//        String[] values = {"dog","racecar","car"};
+////        System.out.println(trieOperations.distinctSubStrings(values));
+//        System.out.println(trieOperations.longestCommonSubstring(values));
+        int[] nums = {0,0,1,1,1,2,2,3,3,4};
+        System.out.println(basicsClass.removeDuplicatedValueFromSortedArray(nums));
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
     }
 }
