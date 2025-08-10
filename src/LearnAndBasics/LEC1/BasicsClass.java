@@ -160,6 +160,95 @@ public class BasicsClass {
         return result;
     }
 
+    class Solution1 {
+        public int[] plusOne(int[] number) {
+            int[] result = new int[number.length];
+            String value = "";
+            boolean flag = true;
+            for (int i =0;i<number.length ; i++){
+                value = value.concat(String.valueOf(number[i]));
+                if(number[i] != 9){
+                    flag = false;
+                }
+            }
+            if(flag) result = new int[number.length +1];
+            value = String.valueOf( Long.valueOf(value) + 1);
+            System.out.println(value);
+            for(int i =0; i< value.length(); i++){
+                int digit = value.charAt(i) - '0' ;
+                result[i] = digit ;
+            }
+            return result;
+        }
+    }
+
+
+    public int[] plusOne(int[] digits) {
+        int n = digits.length;
+        if (digits[n - 1] != 9) {
+            digits[n - 1] = digits[n - 1] + 1;
+            return digits;
+        }
+        int k= 0;
+        for (int i = n - 1; i >= 0; i--) {
+            if (digits[i] == 9) {
+                k ++;
+            } else {
+                digits[i] = digits[i] + 1;
+                break;
+            }
+        }
+        if (k == n) {
+            int[] res = new int[n + 1];
+            res[0] = 1;
+            for (int i = 1; i < n + 1; i++) {
+                res[i] = 0;
+                return res;
+            }
+        } else {
+            for (int i = k + 2; i < n; i++) {
+                digits[i] = 0;
+            }
+        }
+        return digits;
+    }
+
+    public int mySqrt(int x) {
+        return (int) Math.sqrt(x);
+
+    }
+    public int[][] setZeroes(int[][] matrix) {
+        int row = matrix.length;
+        int col = matrix[0].length;
+        System.out.println(row);
+        System.out.println(col);
+
+        int [][] res = new int[row][col];
+        for(int i =0; i < row; i++) {
+            for(int j =0; j< col;j++) {
+                res[i][j] = matrix[i][j];
+            }
+        }
+        for (int i = 0; i < row;i++) {
+            for (int j =0; j< col ; j++) {
+                if (matrix[i][j]==0) {
+                    System.out.println("i value : "+i+" j value "+j);
+                    for (int k = 0; k < row; k++) {
+                        for (int l =0; l< col ; l++) {
+                            System.out.println("k value : "+k+" l value "+l);
+                            if (k == i || l == j) {
+                                System.out.println("inside k value : "+k+" l value "+l);
+                                res[k][l] = 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return res;
+    }
+
+
 
     class Solution {
         public boolean isValid(String s) {
